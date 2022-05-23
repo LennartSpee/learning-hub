@@ -5,3 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+offers = Offer.create([{ title: 'Lord of the Rings' }, { price: '50' }, { duration: '30' }, { description: 'Lord of the Rings' },  { location: 'lisbon' }])
