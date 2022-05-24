@@ -1,16 +1,17 @@
-class BookingController < ApplicationController
+class BookingsController < ApplicationController
   def new
     @booking = Booking.new
   end
 
   def create
-    @booking = Booking.new(params[:id])
+    @booking = Booking.new(booking_params)
+    @booking.user = current_user
     if @booking.save
       flash[:success] = "Booking successfully done"
-      redirect_to @offer
+      redirect_to booking_path(@booking)
     else
       flash[:error] = "Something went wrong"
-      render 'new'
+      render :new
     end
 
     def show
@@ -26,6 +27,6 @@ class BookingController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:user_id, :offer_id, :timing)
+    params.require(:booking).permit(:offer_id, :starting_date, :ending_date)
   end
 end
