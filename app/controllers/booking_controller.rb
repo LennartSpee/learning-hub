@@ -1,5 +1,4 @@
 class BookingController < ApplicationController
-
   def new
     @booking = Booking.new
   end
@@ -8,25 +7,25 @@ class BookingController < ApplicationController
     @booking = Booking.new(params[:id])
     if @booking.save
       flash[:success] = "Booking successfully done"
-      redirect_to @flat
+      redirect_to @offer
     else
       flash[:error] = "Something went wrong"
       render 'new'
     end
 
-  def show
-    @booking = booking.find(params[:id])
+    def show
+      @booking = booking.find(params[:id])
+    end
+
+    def destroy
+      @booking.destroy
+      redirect_to offer_path(@booking.user)
+    end
   end
 
-  def destroy
-    @booking.destroy
-    redirect_to offer_path(@booking.list)
+  private
+
+  def booking_params
+    params.require(:booking).permit(:user_id, :offer_id, :timing)
   end
-end
-
-private
-
-def booking_params
-  params.require(:booking).permit(:user_id, :offer_id, :timing)
-end
 end
