@@ -1,0 +1,16 @@
+<p>
+  <strong>Name:</strong>
+  <%= @offer.name %>
+</p>
+<ul>
+  <% @offer.bookmarks.each do |bookmark| %>
+    <li><%= image_tag bookmark.movie.poster_url, alt: "movie poster", width: 200 %></li>
+    <li><%= bookmark.movie.title %></li>
+    <li><%= bookmark.movie.rating %></li>
+    <li><%= bookmark.movie.overview %></li>
+    <li><%= bookmark.comment %></li>
+    <li><%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
+  <% end %>
+</ul>
+<%= link_to 'Back', root_path %>
+<%= link_to 'Add Bookmark', new_offer_bookmark_path(@offer) %>
