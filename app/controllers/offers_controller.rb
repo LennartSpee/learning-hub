@@ -11,7 +11,7 @@ class OffersController < ApplicationController
   end
 
   def create
-    @offer = Offer.new(offer_params)
+    @offer = Offer.new(offer_path[:id])
 
     if @offer.save
       redirect_to @offer, notice: 'Offer was successfully created.'
