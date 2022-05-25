@@ -2,6 +2,7 @@
 <h1 class="text-center">Create a new offer</h1>
 <ul>
 <%= simple_form_for [ @offer ] do |f| %>
+  <%= f.input :photo, as: :file %>
   <%= f.input :price %>
   <%= f.input :duration %>
   <%= f.input :description %>
