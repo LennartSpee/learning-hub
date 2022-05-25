@@ -23,6 +23,6 @@ class OffersController < ApplicationController
   private
 
   def create_params
-    params.require(:offers).permit(:title, :description, :price, :duration, :location)
+    params.require(:offer).permit(:title, :description, :price, :duration, :location)
   end
 end
