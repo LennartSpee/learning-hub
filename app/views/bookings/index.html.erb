@@ -1,0 +1,26 @@
+<div class="mt-5 mx-5">
+<h1 class="text-center">Bookings Overview</h1>
+<div class="mt-5 mx-5">
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Title</th>
+      <th scope="col">Starting Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col">Booking created</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @bookings.each do |booking| %>
+    <tr>
+      <th scope="row">"Title"</th>
+      <td><%= booking.starting_date %></td>
+      <td><%= booking.ending_date %></td>
+      <td><%= booking.created_at %></td>
+    </tr>
+      <% end %>
+  </tbody>
+</table>
+</div>
+
+</div>
