@@ -1,0 +1,13 @@
+  <div class="container">
+    <h1>My bookings</h1>
+    <%# <p> Choose the offer you want to edit</p> %>
+    <%#= link_to 'Edit your offer', new_offer_path, class: "btn btn-accent" %>
+  </div>
+<div class="mt-5 mx-5 cards content">
+<% @bookings.each do |booking| %>
+  <div class="card-category">
+    <%= booking.offer.title %>
+    <%= link_to 'Edit', edit_booking_path(booking) %>
+  </div>
+<% end %>
+</div>
