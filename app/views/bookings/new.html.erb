@@ -1,9 +1,10 @@
-<div class="form">
-  <h1>Here´s your offer!</h1>
-  <%= form_for(@booking) do |f| %>
-    offer_id: <%= f.text_field :offer_id %><br />
-    starting_date: <%= f.text_field :starting_date %><br />
-    ending_date: <%= f.text_area :ending_date %><br />
-    <%= f.submit %>
-  <% end %>
+<div class="mt-5 mx-5">
+  <h1 class="text-center">Here is your offer</h1>
+  <div class="form">
+    <%= simple_form_for [@offer, @booking] do |f| %>
+      <%= f.input :starting_date %>
+      <%= f.input :ending_date %>
+      <%= f.submit "Submit Booking", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
