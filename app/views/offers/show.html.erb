@@ -1,4 +1,4 @@
-<div class="flex-item"></div>
+<div class="flex-item">
 <div class="mt-5 mx-5 card-trip">
   <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
   <div class="card-trip-infos">
@@ -10,6 +10,7 @@
     <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
   </div>
 </div>
+<div class="mt-5 mx-5">
 <p>
   <strong>Name:</strong>
 
@@ -23,6 +24,9 @@
     <li><%= @offer.location %></li>
     <%# <li><%= link_to 'Delete', offer_path(offer), method: :delete, data: { confirm: 'Are you sure?' }</li> %>
 </ul>
-<%= link_to 'Back', offers_path %>
-<%= link_to 'New booking for this offer', new_offer_booking_path(@offer) %>
+<div class="mt-5 mx-5 footer">
+<%= link_to 'Back', offers_path, class: "btn btn-accent" %>
+<%= link_to 'New booking for this offer', new_offer_booking_path(@offer), class: "btn btn-accent" %>
+</div>
+</div>
 </div>
