@@ -15,7 +15,7 @@ user_4 = User.create!(name: 'John White', email: 'johnwhite@gmail.com', password
 user_5 = User.create!(name: 'John Pink', email: 'johnpink@gmail.com', password: "123456", phone_number: '444444')
 user_6 = User.create!(name: 'John Yellow', email: 'johnyellow@gmail.com', password: "123456", phone_number: '555555')
 
-Offer.create!(title: 'Lord of the Rings II', price: '50', duration: '30', description: 'Lord of the Rings', location: 'lisbon', user: user_1)
+Offer.create!(title: 'Lord of the Rings II', price: '50', duration: '30', description: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et', location: 'lisbon', user: user_1)
 Offer.create!(title: 'Lord of the Rings III', price: '50', duration: '30', description: 'Lord of the Rings', location: 'lisbon', user: user_2)
 Offer.create!(title: 'Lord of the Rings', price: '50', duration: '30', description: 'Lord of the Rings', location: 'lisbon', user: user_3)
 Offer.create!(title: 'Blade', price: '50', duration: '30', description: 'Vampires', location: 'lisbon', user: user_4)
