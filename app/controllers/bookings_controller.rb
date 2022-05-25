@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def new
     @booking = Booking.new
+    @offer = Offer.find(params[:offer_id])
   end
 
   def create
@@ -15,7 +16,7 @@ class BookingsController < ApplicationController
     end
 
     def show
-      @booking = booking.find(params[:id])
+      @booking = offer.find(params[:id])
     end
 
     def destroy
