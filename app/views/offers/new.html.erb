@@ -1,5 +1,6 @@
+<div class="mt-5 mx-5">
 <p class="text-center">
-  <strong>Create a new offer</strong>
+  <h1>Create a new offer</h1>
 </p>
 <ul>
 <%= simple_form_for [ @offer ] do |f| %>
@@ -10,3 +11,5 @@
   <%= f.input :location %>
   <%= f.submit "Submit offer", class: "btn btn-primary" %>
 <% end %>
+<div class="pt-5 center"><%= link_to 'Back to list page', root_path, class: "btn btn-accent" %></div>
+</div>
