@@ -1,16 +1,26 @@
+<div class="card-trip">
+  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
+  <div class="card-trip-infos">
+    <div>
+      <h2><%= @offer.title %></h2>
+      <p><%= @offer.description %></p>
+    </div>
+    <h2 class="card-trip-pricing"><%= @offer.price %></h2>
+    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
+  </div>
+</div>
 <p>
   <strong>Name:</strong>
-  <%= @offer.name %>
+
 </p>
 <ul>
-  <% @offer.bookmarks.each do |bookmark| %>
-    <li><%= image_tag bookmark.movie.poster_url, alt: "movie poster", width: 200 %></li>
-    <li><%= bookmark.movie.title %></li>
-    <li><%= bookmark.movie.rating %></li>
-    <li><%= bookmark.movie.overview %></li>
-    <li><%= bookmark.comment %></li>
-    <li><%= link_to 'Delete', bookmark_path(bookmark), method: :delete, data: { confirm: 'Are you sure?' } %></li>
-  <% end %>
+    <%# <li><%= image_tag offer.movie.poster_url, alt: "movie poster", width: 200 </li>%>
+    <li><%= @offer.title %></li>
+    <li><%= @offer.duration %></li>
+    <li></li>
+    <li></li>
+    <li><%= @offer.location %></li>
+    <%# <li><%= link_to 'Delete', offer_path(offer), method: :delete, data: { confirm: 'Are you sure?' }</li> %>
 </ul>
-<%= link_to 'Back', root_path %>
-<%= link_to 'Add Bookmark', new_offer_bookmark_path(@offer) %>
+<%= link_to 'Back', offers_path %>
+<%= link_to 'New booking for this offer', new_offer_booking_path(@offer) %>
