@@ -1,0 +1,12 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Offer Overview</h1>
+    <p>    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odio unde soluta odit velit molestias quod quis nostrum veritatis similique dolores impedit, magnam quisquam ipsum veniam esse voluptatum possimus maxime fuga.</p>
+    <%= link_to 'create new Offer', new_offer_path, class: "btn btn-accent" %>
+  </div>
+</div>
+<div class="mt-2 cards content">
+<% @offers.each do |offer| %>
+  <div class="card-category"><%= offer.title %> ➡️ <%= link_to 'Show', offer_path(offer.id) %></div>
+<% end %>
+</div>
