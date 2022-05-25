@@ -11,6 +11,12 @@
 </div>
 <p>
   <strong>Name:</strong>
+   <div>
+      <button type="button" class="btn btn-flat" data-bs-toggle="modal" data-bs-target="#new_booking_modal">
+        |Book your Offer|
+      </button>
+      <%= link_to "book it!", booking_path(@offer), method: :booking, class: "btn btn-book", data: { confirm: "Are you sure you want to book this offer?" } %>
+    </div>
 
 </p>
 <ul>
