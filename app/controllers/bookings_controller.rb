@@ -3,7 +3,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new
     @offer = Offer.find(params[:offer_id])
   end
-
+  # def index
+  #   @bookings = Booking.all
+  # end
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
@@ -17,7 +19,7 @@ class BookingsController < ApplicationController
     end
 
     def show
-      @booking = offer.find(params[:id])
+      @booking = Booking.find(params[:id])
     end
 
     def destroy
