@@ -28,21 +28,24 @@ class BookingsController < ApplicationController
       @bookings = current_user.bookings
     end
 
-    def destroy_my_bookings
-      @bookings = current_user.bookings
-      @booking = Booking.find(params[:id])
-      @booking.destroy
-
-      redirect_to my_bookings_path(@offers)
-    end
-
     def edit
       @booking = Booking.find(params[:id])
     end
 
+    def update
+      @booking = Booking.find(params[:id])
+      if @booking.update(booking_params)
+        redirect_to my_bookings_path
+      else
+        render :edit
+      end
+    end
+
     def destroy
+      @booking = Booking.find(params[:id])
       @booking.destroy
-      redirect_to offer_path(@booking.user)
+
+      redirect_to my_bookings_path(@offers)
     end
   end
 
