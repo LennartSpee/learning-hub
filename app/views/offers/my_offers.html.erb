@@ -1,10 +1,13 @@
   <div class="container">
     <h1>My offers</h1>
-    <p> Choose the offer you want to edit</p>
-    <%= link_to 'Edit your offer', new_offer_path, class: "btn btn-accent" %>
+    <%# <p> Choose the offer you want to edit</p> %>
+    <%#= link_to 'Edit your offer', new_offer_path, class: "btn btn-accent" %>
   </div>
 <div class="mt-5 mx-5 cards content">
 <% @offers.each do |offer| %>
-  <div class="card-category" style="background-image: <%= offer.photo %>;"><%= offer.title %><%= link_to 'Show', offer_path(offer.id) %></div>
+  <div class="card-category" style="background-image: <%= offer.photo %>;">
+    <%= offer.title %>
+    <%= link_to 'Edit', edit_offer_path(offer) %>
+  </div>
 <% end %>
 </div>
