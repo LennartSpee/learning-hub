@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :bookings, only: [:show, :edit, :update, :destroy] do
     resources :reviews, only: [:create, :new]
   end
+
+  get 'my_offers', to: 'offers#my_offers'
 end

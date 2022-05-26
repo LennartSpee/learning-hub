@@ -21,6 +21,10 @@ class OffersController < ApplicationController
     end
   end
 
+  def my_offers
+    @offers = current_user.offers
+  end
+
   private
 
   def create_params
