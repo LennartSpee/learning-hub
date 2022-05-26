@@ -45,8 +45,8 @@ class OffersController < ApplicationController
     @offers = current_user.offers
   end
 
-  def destroy_my_offers
-    @offers = current_user.offers
+  def destroy
+    # @offers = current_user.offers
     @offer = Offer.find(params[:id])
     @offer.destroy
 
