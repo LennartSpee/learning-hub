@@ -1,10 +1,10 @@
 <div class="mt-5 mx-5">
-<h1 class="text-center">Edit or delete your booking</h1>
+<h1 class="text-center">Edit your booking</h1>
 <ul>
-<%= simple_form_for [ @booking ] do |f| %>
+<%= simple_form_for @booking do |f| %>
   <%= f.input :starting_date %>
   <%= f.input :ending_date %>
   <%= f.submit :submit, class: "btn btn-primary" %>
 <% end %>
-<div class="pt-5 center"><%= link_to 'Back to offers page', root_path, class: "btn btn-accent" %></div>
+<div class="pt-5 center"><%= link_to 'Back to bookings page', root_path, class: "btn btn-accent" %></div>
 </div>
