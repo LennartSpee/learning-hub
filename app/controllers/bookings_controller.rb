@@ -20,34 +20,31 @@ class BookingsController < ApplicationController
       flash[:error] = "Something went wrong"
       render :new
     end
+  end
 
-    # def show
-    #   @booking = Booking.find(params[:id])
-    # end
+  def my_bookings
+    @bookings = current_user.bookings
+  end
 
-    def my_bookings
-      @bookings = current_user.bookings
+  def edit
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    if @booking.update(booking_params)
+      flash[:notice] = "Booking successfully changed"
+      redirect_to bookings_path
+    else
+      render :edit
     end
+  end
 
-    def edit
-      @booking = Booking.find(params[:id])
-    end
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
 
-    def update
-      @booking = Booking.find(params[:id])
-      if @booking.update(booking_params)
-        redirect_to my_bookings_path
-      else
-        render :edit
-      end
-    end
-
-    def destroy
-      @booking = Booking.find(params[:id])
-      @booking.destroy
-
-      redirect_to my_bookings_path(@offers)
-    end
+    redirect_to my_bookings_path(@offers)
   end
 
   private
