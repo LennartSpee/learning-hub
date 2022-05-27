@@ -69,12 +69,12 @@ ActiveRecord::Schema.define(version: 2022_05_25_154420) do
   end
 
   create_table "reviews", force: :cascade do |t|
-    t.text "content"
+    t.text "comment"
     t.float "rating"
-    t.bigint "offer_id"
+    t.bigint "booking_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["offer_id"], name: "index_reviews_on_offer_id"
+    t.index ["booking_id"], name: "index_reviews_on_booking_id"
   end
 
   create_table "users", force: :cascade do |t|

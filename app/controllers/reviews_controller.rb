@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def create
     @offer = Offer.find(params[:offer_id])
     @review = Review.new(review_params)
-    @review.offer = @offer
+    @review.booking = @offer.bookings.first
     if @review.save
       flash[:success] = 'Review created!'
       redirect_to offer_path(@offer)
