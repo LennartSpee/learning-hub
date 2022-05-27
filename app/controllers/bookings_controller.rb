@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
   end
 
   def create
+    #@reviews = Review.new
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.offer = Offer.find(params[:offer_id])
