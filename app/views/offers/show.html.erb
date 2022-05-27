@@ -22,14 +22,14 @@
           Be the first to leave a review for <%= @offer.title %>
         <% else %>
           <% @offer.reviews.each do |review| %>
-          <p><%= review.content %></p>
+            <p><%= review.content %></p>
           <% end %>
         <% end %>
         <h6>
         <%= pluralize @offer.reviews.size, "review" %>
         </h6>
         <%= simple_form_for([@offer, @review]) do |f| %>
-        <%= f.input :content, as: :text %>
+        <%= f.input :comment, as: :text %>
         <%= f.input :rating, as: :float %>
         <%= f.submit 'Create Review', class: "btn btn-accent" %>
         <% end %>
