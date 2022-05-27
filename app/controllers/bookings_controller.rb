@@ -43,7 +43,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.destroy
 
-    redirect_to my_bookings_path(@offers)
+    redirect_to bookings_path
   end
 
   private

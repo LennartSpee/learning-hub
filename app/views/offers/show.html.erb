@@ -30,7 +30,7 @@
 <% if     @offer.user == current_user %>
 
 <%= link_to 'Edit', edit_offer_path, class: "btn btn-accent" %>
-<%= link_to 'Delete', offer_path(@offer), method: :delete,  class: "btn btn-accent" %>
+<%= link_to 'Delete', offer_path(@offer), method: :delete, class: "btn btn-accent" %>
 
 <% else %>
 
