@@ -1,23 +1,21 @@
 class ReviewsController < ApplicationController
-  def new
-    @offers = Offers.find(params[:booking_id])
-    @review = Review.new
-  end
 
   def create
-    @offers = Offers.find(params[:booking_id])
-    @review = Review.new
-    @review.offers = @offers
+    @offer = Offer.find(params[:offer_id])
+    @review = Review.new(review_params)
+    @review.offer = @offer
     if @review.save
+      flash[:success] = 'Review created!'
       redirect_to offer_path(@offer)
     else
-      render :new
+      flash[:error] = "Review wasn't saved"
+      render 'offers/show'
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:comment)
+    params.require(:review).permit(:rating, :content)
   end
 end
